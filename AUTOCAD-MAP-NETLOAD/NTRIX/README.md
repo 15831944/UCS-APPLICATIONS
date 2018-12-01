@@ -7,6 +7,9 @@ on the appropriate Layer.
 
 Required files:
     NEW TRIX.dwg (Blocks and Layers required by the...)
+    
     nTRIX.XLSX (... look-up spreadsheet for assigning and annotating Entities)
+    
     Utils-PPLAN.LSP (Specifically: C:PPDXF and C:PPDWG to prepare the DXF for use in a Petition Plan DWG)
+    
     EPPlus.dll (Excellent library by: https://github.com/JanKallman/EPPlus)
