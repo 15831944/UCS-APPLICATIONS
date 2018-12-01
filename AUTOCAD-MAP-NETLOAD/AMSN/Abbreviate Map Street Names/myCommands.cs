@@ -2,9 +2,7 @@
  * Abbreviate all DTEXT Street Names imported from ArcGIS
  * Originally written and compiled in .NET version 3.5 for AutoCAD 3D Map 2011
  *
- * Created by Steven H. Brubaker 
- * for UC Synergetic CADD Team
- * 27 May 2014
+ * 27 May 2014 - Created by Steven H. Brubaker
  *
  * 01 Dec 2018 - Updated to .NET 4.7 for AutoCAD Map 3D 2019 
 */
