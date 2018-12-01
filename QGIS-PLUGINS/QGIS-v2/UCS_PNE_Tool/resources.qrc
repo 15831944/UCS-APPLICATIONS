@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/plugins/UCS_PNE_Tool" >
+        <file>icon.png</file>
+    </qresource>
+</RCC>

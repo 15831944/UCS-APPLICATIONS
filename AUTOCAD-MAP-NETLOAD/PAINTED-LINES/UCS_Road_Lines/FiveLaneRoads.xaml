@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="UCS_Road_Lines.FiveLaneRoads"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UCS_Road_Lines"
+             mc:Ignorable="d" 
+             d:DesignHeight="490" d:DesignWidth="268" MouseEnter="UserControl_MouseEnter">
+    <Grid x:Name="grd_5LaneRoads" HorizontalAlignment="Left" Height="475" Margin="7,10,0,0" VerticalAlignment="Top" 
+          Width="250" ScrollViewer.HorizontalScrollBarVisibility="Visible">
+
+        <!--Fixed Labels-->
+        <Label x:Name="lbl_instructions5L" Content="(1) Click on desired style below &#xA;(2) (Optional) Use CLW, CEOP, and/or DEOP &#xD;&#xA;commands&#xA;(3) Apply Style with Command: PAINT__ROAD__LINES" 
+               HorizontalAlignment="Right" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="250" 
+               BorderBrush="Red" VerticalContentAlignment="Center" BorderThickness="1" Background="#00000000" Height="74" 
+               ToolTip="Current Style: None selected" FontSize="10" Margin="0,1,0,0"/>
+        <TextBlock x:Name="txtBlk_Left_EOP" HorizontalAlignment="Left" Margin="10,80,0,0" TextWrapping="Wrap" 
+                   Text="Left E.O.P./Shoulder Width (CEOP)" VerticalAlignment="Top" Height="51" Width="63" 
+                   FontSize="10" ToolTip="Left EOP/Shoulder Width - Change with Command: CEOP" TextAlignment="Center"/>
+        <TextBlock x:Name="txtBlk_Lane_Width" HorizontalAlignment="Center" Margin="96,81,90,0" TextWrapping="Wrap" 
+                   Text="Vehicle Travel Lane Width (CLW)" VerticalAlignment="Top" Width="64" Height="39" 
+                   ToolTip="Lane Width - Change with Command: CLW" FontSize="10" TextAlignment="Center"/>
+        <TextBlock x:Name="txtBlk_Right_EOP" HorizontalAlignment="Right" Margin="0,80,11,0" TextWrapping="Wrap" 
+                   Text="Right E.O.P./Shoulder Width (CEOP)" VerticalAlignment="Top" Width="62" TextAlignment="Center" FontSize="10" 
+                   ToolTip="Right EOP/Shoulder Width - Change with Command: CEOP"/>
+
+        <!--Lane Width Variable-->
+        <Label x:Name="var_LaneWidth_5LN" Content="11.0" HorizontalAlignment="Center" Margin="70,126,67,0" 
+               VerticalAlignment="Top" Width="113" HorizontalContentAlignment="Center" FontWeight="Bold" 
+               FontSize="16" Height="36" ToolTip="Lane Width - Change with Command: CLW"/>
+
+        <!--Shoulder Width Variables-->
+        <Label x:Name="var_RightShoulderWidth_5LN" Content="0.0" HorizontalAlignment="Right" Margin="0,125,10,0" 
+               VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+               Height="32" FontSize="16" FontWeight="Bold" Foreground="Black" ToolTip="Right EOP/Shoulder Width - Change with Command: CEOP"/>
+        <Label x:Name="var_LeftShoulderWidth_5LN" Content="0.0" HorizontalAlignment="Left" Margin="10,125,0,0" 
+               VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+               Height="32" FontSize="16" FontWeight="Bold" Foreground="Black" ToolTip="Left EOP/Shoulder Width - Change with Command: CEOP"/>
+
+        <!--Images inside Buttons-->
+        <Button x:Name="FiveL_W_DW_Y_DY_DY_Y_DW" Margin="0,164,0,0" Background="#00000000"  
+                Foreground="#00000000" VerticalAlignment="Top" MinHeight="50" Height="57" MinWidth="250" 
+                BorderBrush="Transparent"
+                BorderThickness="3" RenderTransformOrigin="0.5,0.5" Click="FiveL_W_DW_Y_DY_DY_Y_DW_Click">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Image x:Name="FiveLanes_W_DW_Y_DY_DY_Y_DW" Source="Images/Five-Lanes/5L-W-DW-Y-DY-DY-Y-DW-W.bmp" Width="237" Stretch="UniformToFill" 
+                           ToolTip="Five Lanes - (Four Lane Road) with Center Turnout" 
+                           Height="50" OpacityMask="Black" MinWidth="250" MinHeight="50"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+
+        <Button x:Name="FiveL_DW_Y_DY_DY_Y_DW" Margin="0,226,0,0" Background="#00000000"  
+                Foreground="#00000000" VerticalAlignment="Top" MinHeight="50" Height="57" MinWidth="250" 
+                BorderBrush="Transparent"
+                BorderThickness="3" RenderTransformOrigin="0.5,0.5" Click="FiveL_DW_Y_DY_DY_Y_DW_Click" >
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Image x:Name="FiveLanes_DW_Y_DY_DY_Y_DW" Source="Images/Five-Lanes/5L-DW-Y-DY-DY-Y-DW.bmp" Width="225" Stretch="UniformToFill" 
+                           ToolTip="Five Lanes - (Four Lane Road) with Center Turnout but without White Edge Lines" 
+                           Height="50" OpacityMask="Black" MinWidth="250" MinHeight="50"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+
+    </Grid>
+</UserControl>

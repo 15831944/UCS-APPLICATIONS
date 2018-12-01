@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>UCS_PNE_ToolDialogBase</class>
+ <widget class="QDialog" name="UCS_PNE_ToolDialogBase">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>528</width>
+    <height>463</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>QGIS Planning and Engineering Tools</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>icon.png</normaloff>icon.png</iconset>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QPushButton" name="btnGetPathToCSVFiles">
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {background-color: #A3C1DA; color: rgb(0, 0, 0);}
+</string>
+     </property>
+     <property name="text">
+      <string>(1) Save CSV's to:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1" colspan="2">
+    <widget class="QLineEdit" name="txtPathToCSVFiles"/>
+   </item>
+   <item row="1" column="0" colspan="3">
+    <widget class="QLabel" name="lblValidateExistingLayer">
+     <property name="text">
+      <string>Please select your Final Join Layer below:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0" colspan="3">
+    <widget class="QLabel" name="lblSelectMDULayer">
+     <property name="text">
+      <string>Please select the MDU-MTU Join Layer below:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0" colspan="3">
+    <widget class="QLabel" name="lblSelectReelLayer">
+     <property name="text">
+      <string>Please select the Reel Layer below:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0">
+    <widget class="QLabel" name="lblStatus">
+     <property name="text">
+      <string>Status:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="0" colspan="3">
+    <widget class="QTextEdit" name="textEditFeedback">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="0" colspan="3">
+    <widget class="QPushButton" name="btnCreateCSVs">
+     <property name="styleSheet">
+      <string notr="true">QPushButton {background-color: #A3C1DA; color: rgb(0, 0, 0);}
+</string>
+     </property>
+     <property name="text">
+      <string>(5) Create CSV Files</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QPushButton" name="btnCheckTermLayer">
+     <property name="styleSheet">
+      <string notr="true">QPushButton {background-color: #A3C1DA; color: rgb(0, 0, 0);}
+</string>
+     </property>
+     <property name="text">
+      <string>(2) Check Terminal Layer</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1" colspan="2">
+    <widget class="QComboBox" name="cBoxValidateExistingLayer"/>
+   </item>
+   <item row="4" column="0">
+    <widget class="QPushButton" name="btnCheckMDULayer">
+     <property name="styleSheet">
+      <string notr="true">QPushButton {background-color: #A3C1DA; color: rgb(0, 0, 0);}
+</string>
+     </property>
+     <property name="text">
+      <string>(3) Check MDU Layer</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1" colspan="2">
+    <widget class="QComboBox" name="cBoxMDUJoinLayer"/>
+   </item>
+   <item row="6" column="0">
+    <widget class="QPushButton" name="btnCheckReelLayer">
+     <property name="styleSheet">
+      <string notr="true">QPushButton {background-color: #A3C1DA; color: rgb(0, 0, 0);}
+</string>
+     </property>
+     <property name="text">
+      <string>(4) Check Reel Layer</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="1" colspan="2">
+    <widget class="QComboBox" name="cBoxReelLayer"/>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

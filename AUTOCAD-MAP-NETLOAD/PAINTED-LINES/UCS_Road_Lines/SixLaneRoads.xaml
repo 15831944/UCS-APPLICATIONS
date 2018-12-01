@@ -1,0 +1,107 @@
+﻿<UserControl x:Class="UCS_Road_Lines.SixLaneRoads"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UCS_Road_Lines"
+             mc:Ignorable="d" 
+             d:DesignHeight="490" d:DesignWidth="268" MouseEnter="UserControl_MouseEnter">
+    <Grid x:Name="grd_6LaneRoads" HorizontalAlignment="Left" Height="475" Margin="7,10,0,0" VerticalAlignment="Top" 
+          Width="250" ScrollViewer.HorizontalScrollBarVisibility="Visible">
+        <!--Fixed Labels-->
+        <Label x:Name="lbl_instructions6L" Content="(1) Click on desired style below &#xA;(2) (Optional) Use CLW, CEOP, DEOP and/or &#xD;&#xA;MEOP commands&#xA;(3) Apply Style with Command: PAINT__ROAD__LINES" 
+               HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="250" 
+               BorderBrush="Red" VerticalContentAlignment="Center" BorderThickness="1" Background="#00000000" Height="74" 
+               ToolTip="Current Style: None selected" FontSize="10" Margin="0,1,0,0"/>
+        <TextBlock x:Name="txtBlk_Left_EOP" HorizontalAlignment="Left" Margin="10,80,0,0" TextWrapping="Wrap" 
+                   Text="Left E.O.P./Shoulder Width (CEOP)" VerticalAlignment="Top" Height="51" Width="63" 
+                   FontSize="10" ToolTip="Left EOP/Shoulder Width - Change with Command: CEOP" TextAlignment="Center"/>
+        <TextBlock x:Name="txtBlk_Left_Median" TextWrapping="Wrap" 
+                   Text="Left Median Width (MEOP)" VerticalAlignment="Top" Height="40" 
+                   FontSize="10" ToolTip="Left Median Width - If you have a Median -> Change with Command: MEOP" TextAlignment="Center" Margin="64,283,128,0"/>
+        <TextBlock x:Name="txtBlk_Lane_Width" HorizontalAlignment="Center" Margin="96,81,90,0" TextWrapping="Wrap" 
+                   Text="Vehicle Travel Lane Width (CLW)" VerticalAlignment="Top" Width="64" Height="39" 
+                   ToolTip="Lane Width - Change with Command: CLW" FontSize="10" TextAlignment="Center"/>
+        <TextBlock x:Name="txtBlk_Right_Median" HorizontalAlignment="Left" Margin="137,283,0,0" TextWrapping="Wrap" 
+                   Text="Right Median Width (MEOP)" VerticalAlignment="Top" Width="61" TextAlignment="Center" FontSize="10" 
+                   ToolTip="Right Median Width - If you have a Median -> Change with Command: MEOP"/>
+        <TextBlock x:Name="txtBlk_Right_EOP" HorizontalAlignment="Right" Margin="0,80,11,0" TextWrapping="Wrap" 
+                   Text="Right E.O.P./Shoulder Width (CEOP)" VerticalAlignment="Top" Width="62" TextAlignment="Center" FontSize="10" 
+                   ToolTip="Right EOP/Shoulder Width - Change with Command: CEOP"/>
+
+        <!--Lane Width Variable-->
+        <Label x:Name="var_LaneWidth_6LN" Content="11.0" HorizontalAlignment="Center" Margin="70,126,67,0" 
+               VerticalAlignment="Top" Width="113" HorizontalContentAlignment="Center" FontWeight="Bold" 
+               FontSize="16" Height="36" ToolTip="Lane Width - Change with Command: CLW"/>
+
+        <!--Shoulder Width Variables-->
+        <Label x:Name="var_RightShoulderWidth_6LN" Content="0.0" HorizontalAlignment="Right" Margin="0,125,10,0" 
+               VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+               Height="32" FontSize="16" FontWeight="Bold" Foreground="Black" ToolTip="Right EOP/Shoulder Width - Change with Command: CEOP"/>
+        <Label x:Name="var_LeftShoulderWidth_6LN" Content="0.0" HorizontalAlignment="Left" Margin="10,125,0,0" 
+               VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+               Height="32" FontSize="16" FontWeight="Bold" Foreground="Black" ToolTip="Left EOP/Shoulder Width - Change with Command: CEOP"/>
+
+        <!--Median Width Variables-->
+        <Label x:Name="var_LeftMedianWidth_6LN" Content="0.0" HorizontalAlignment="Left" Margin="62,315,0,0" 
+               VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+               Height="32" FontSize="16" FontWeight="Bold" Foreground="Black" ToolTip="Left Median Width - (If you have a Median) Change with Command: MEOP" RenderTransformOrigin="-0.275,0.521"/>
+        <Label x:Name="var_RightMedianWidth_6LN" Content="0.0" HorizontalAlignment="Left" Margin="138,315,0,0" 
+               VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+               Height="32" FontSize="16" FontWeight="Bold" Foreground="Black" ToolTip="Right Median Width - (If you have a Median) Change with Command: MEOP" />
+
+        <!--Images inside Buttons-->
+        <Button x:Name="SixL_W_NO_MED_W" Margin="0,159,0,0" Background="#00000000"  
+                Foreground="#00000000" VerticalAlignment="Top" MinHeight="50" Height="57" MinWidth="250" 
+                BorderBrush="Transparent"
+                BorderThickness="3" RenderTransformOrigin="0.5,0.5" Click="SixL_W_NO_MED_W_Click">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Image x:Name="SixLanes_W_NO_MED_W" Source="Images/Six-Lanes/6L-W-NO-MED-W.bmp" Width="237" Stretch="UniformToFill" 
+                           ToolTip="Six Lanes - No Median, 3 Lanes on each side" 
+                           Height="50" OpacityMask="Black" MinWidth="250" MinHeight="50"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+
+        <Button x:Name="SixL_NO_MED_NO_W" Margin="0,221,0,0" Background="#00000000"  
+                Foreground="#00000000" VerticalAlignment="Top" MinHeight="50" Height="57" MinWidth="250" 
+                BorderBrush="Transparent"
+                BorderThickness="3" RenderTransformOrigin="0.5,0.5" Click="SixL_NO_MED_NO_W_Click">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Image x:Name="SixLanes_NO_MED_NO_W" Source="Images/Six-Lanes/6L-NO-MED-NO-W.bmp" Width="225" Stretch="UniformToFill" 
+                           ToolTip="Six Lanes - No Median, 3 Lanes on each side, No White Edge Lines" 
+                           Height="50" OpacityMask="Black" MinWidth="250" MinHeight="50"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+
+        <Button x:Name="SixL_W_MED_W" Margin="0,346,0,0" Background="#00000000"  
+                Foreground="#00000000" VerticalAlignment="Top" MinHeight="50" Height="57" MinWidth="250" 
+                BorderBrush="Transparent"
+                BorderThickness="3" RenderTransformOrigin="0.5,0.5" Click="SixL_W_MED_W_Click">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Image x:Name="SixLanes_W_MED_W" Source="Images/Six-Lanes/6L-W-MED-W.bmp" Width="228" Stretch="UniformToFill" 
+                           ToolTip="Six Lanes - Divided Highway, 3 Lanes on each side" 
+                           Height="50" OpacityMask="Black" MinWidth="250" MinHeight="50"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+
+        <Button x:Name="SixL_MED_NO_W" Margin="0,408,0,0" Background="#00000000"  
+                Foreground="#00000000" VerticalAlignment="Top" MinHeight="50" Height="57" MinWidth="250" 
+                BorderBrush="Transparent"
+                BorderThickness="3" RenderTransformOrigin="0.5,0.5" Click="SixL_MED_NO_W_Click">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Image x:Name="SixLanes_MED_NO_W" Source="Images/Six-Lanes/6L-MED-NO-W.bmp" Width="235" Stretch="UniformToFill" 
+                           ToolTip="Six Lanes - Divided Highway, 3 Lanes each side, No White Edge Lines" 
+                           Height="50" OpacityMask="Black" MinWidth="250" MinHeight="50"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+
+    </Grid>
+</UserControl>

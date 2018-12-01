@@ -1,0 +1,103 @@
+﻿<UserControl x:Class="UCS_Road_Lines.ThreeLaneRoads"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UCS_Road_Lines"
+             mc:Ignorable="d" 
+             d:DesignHeight="409.091" d:DesignWidth="265.289" MouseEnter="UserControl_MouseEnter" Width="268" Height="490">
+    <Grid x:Name="grd_3LaneRoads" HorizontalAlignment="Left" Height="475" Margin="7,10,0,0" VerticalAlignment="Top"
+          Width="250" ScrollViewer.HorizontalScrollBarVisibility="Visible">
+
+        <!--Fixed Labels-->
+        <Label x:Name="lbl_instructions3L" Content="(1) Click on desired style below &#xA;(2) (Optional) Use CLW, CEOP, and/or DEOP &#xD;&#xA;commands&#xA;(3) Apply Style with Command: PAINT__ROAD__LINES"
+               HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="250"
+               BorderBrush="Red" VerticalContentAlignment="Center" BorderThickness="1" Background="#00000000" Height="64"
+               ToolTip="Current Style: None selected" FontSize="10"/>
+        <TextBlock x:Name="txtBlk_Left_EOP3L" HorizontalAlignment="Left" Margin="0,69,0,0" TextWrapping="Wrap"
+                   Text="Left E.O.P./Shoulder Width (CEOP)" VerticalAlignment="Top" Height="51" Width="63"
+                   FontSize="10" ToolTip="Left EOP/Shoulder Width - Change with Command: CEOP" TextAlignment="Center"/>
+        <TextBlock x:Name="txtBlk_Lane_Width3L" HorizontalAlignment="Left" Margin="92,69,0,0" TextWrapping="Wrap"
+                   Text="Vehicle Travel Lane Width (CLW)" VerticalAlignment="Top" Width="64" Height="39"
+                   ToolTip="Lane Width - Change with Command: CLW" FontSize="10" TextAlignment="Center"/>
+        <TextBlock x:Name="txtBlk_Right_EOP3L" HorizontalAlignment="Left" Margin="187,69,0,0" TextWrapping="Wrap"
+                   Text="Right E.O.P./Shoulder Width (CEOP)" VerticalAlignment="Top" Width="62" TextAlignment="Center" FontSize="10"
+                   ToolTip="Right EOP/Shoulder Width - Change with Command: CEOP"/>
+
+        <!--Lane Width Variable-->
+        <Label x:Name="var_LaneWidth_3LN" Content="11.0" HorizontalAlignment="Left" Margin="69,103,0,0"
+               VerticalAlignment="Top" Width="113" HorizontalContentAlignment="Center" FontWeight="Bold"
+               FontSize="16" Height="36" ToolTip="Lane Width - Change with Command: CLW"/>
+
+        <!--Shoulder Width Variables-->
+        <Label x:Name="var_RightShoulderWidth_3LN" Content="0.0" HorizontalAlignment="Left" Margin="191,103,-1,0"
+               VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+               Height="32" FontSize="16" FontWeight="Bold" Foreground="Black" ToolTip="Right EOP/Shoulder Width - Change with Command: CEOP"/>
+        <Label x:Name="var_LeftShoulderWidth_3LN" Content="0.0" HorizontalAlignment="Left" Margin="4,103,0,0"
+               VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+               Height="32" FontSize="16" FontWeight="Bold" Foreground="Black" ToolTip="Left EOP/Shoulder Width - Change with Command: CEOP"/>
+
+        <!--Images inside Buttons-->
+        <Button x:Name="ThreeL_W_CLT_W" Margin="0,139,0,0" Background="#00000000"  
+                Foreground="#00000000" VerticalAlignment="Top" MinHeight="50" Height="50" Width="250" MinWidth="250" 
+                BorderBrush="Transparent"
+                BorderThickness="3" Click="ThreeL_W_CLT_W_Click">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Image x:Name="ThreeLane_W_CLT_W" Source="images/Three-Lanes/3L-W-CLT-W.bmp"  Width="250" Stretch="UniformToFill" 
+                           ToolTip="Three Lane - Center Lane for Turns" 
+                           Height="50" OpacityMask="Black" MinWidth="250" MinHeight="50"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Button x:Name="ThreeL_W_DAW_DBY_W" Margin="0,208,0,0" Background="#00000000" Foreground="#00000000"
+                VerticalAlignment="Top" MinWidth="130" MinHeight="50" Height="50" Width="250"
+                BorderBrush="Transparent"
+                BorderThickness="3" Click="ThreeL_W_DAW_DBY_W_Click">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Image x:Name="ThreeLanes_W_DAW_DBY_W" Source="images/Three-Lanes/3L-W-DAW-DBY-W.bmp" Width="250" Stretch="UniformToFill"
+                           ToolTip="Three Lane - Two Lanes Left, No Passing Right" Height="50" MinWidth="250" MinHeight="50"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+
+        <Button x:Name="ThreeL_W_DBY_DAW_W" Margin="0,278,0,0" Background="#00000000" Foreground="#00000000" VerticalAlignment="Top"
+                MinWidth="250" MinHeight="50" Height="50" Width="250"
+                BorderBrush="Transparent"
+                BorderThickness="3" Click="ThreeL_W_DBY_DAW_W_Click">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Image x:Name="ThreeLanes_W_DBY_DAW_W" Source="images/Three-Lanes/3L-W-DBY-DAW-W.bmp" Width="250" Stretch="UniformToFill"
+                           ToolTip="Three Lane - No Passing Left, Two Lanes Right" Height="50" MinWidth="250" MinHeight="50"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+
+        <Button x:Name="ThreeL_W_DAW_Y_DAY_W" Margin="0,348,0,0" Background="#00000000" Foreground="#00000000" VerticalAlignment="Top"
+                MinWidth="250" MinHeight="50" Height="50" Width="250"
+                BorderBrush="Transparent"
+                BorderThickness="3" Click="ThreeL_W_DAW_Y_DAY_W_Click">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Image x:Name="ThreeLanes_W_DAW_Y_DAY_W" Source="images/Three-Lanes/3L-W-DAW-Y-DAY-W.bmp" Width="250" Stretch="UniformToFill"
+                           ToolTip="Three Lane - Two Lanes Left, Restricted Passing Right" Height="50" MinWidth="250" MinHeight="50"
+                           RenderTransformOrigin="3.068,1.808"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+
+        <Button x:Name="ThreeL_W_DAY_Y_DAW_W" Margin="0,418,0,0" Background="#00000000" Foreground="#00000000" VerticalAlignment="Top"
+                MinWidth="250" MinHeight="50" Height="50"
+                BorderBrush="Transparent"
+                BorderThickness="3" Width="250" Click="ThreeL_W_DAY_Y_DAW_W_Click">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Image x:Name="ThreeLanes_W_DAY_Y_DAW_W" Source="Images/Three-Lanes/3L-W-DAY-Y-DAW-W.bmp" Width="250" Stretch="UniformToFill"
+                           ToolTip="Three Lane - Restricted Passing Left, Two Lanes Right" Height="50" MinWidth="250" MinHeight="50"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+
+    </Grid>
+</UserControl>

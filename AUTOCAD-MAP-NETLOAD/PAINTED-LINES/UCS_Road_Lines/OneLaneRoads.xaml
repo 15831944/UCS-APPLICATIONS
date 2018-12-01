@@ -1,0 +1,103 @@
+﻿<UserControl x:Class="UCS_Road_Lines.OneLaneRoadUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UCS_Road_Lines"
+             mc:Ignorable="d" ScrollViewer.HorizontalScrollBarVisibility="Visible" Height="490" 
+             MouseEnter="UserControl_MouseEnter" Width="268" ToolTip="">
+    <Grid x:Name="grd_1LaneRoads" HorizontalAlignment="Left" Height="475" Margin="7,10,0,0" VerticalAlignment="Top" 
+          Width="250" ScrollViewer.HorizontalScrollBarVisibility="Visible">
+
+        <!--Fixed Labels-->
+        <Label x:Name="lbl_instructions1L" Content="(1) Click on desired style below &#xA;(2) (Optional) Use CLW, CEOP, and/or DEOP &#xD;&#xA;commands&#xA;(3) Apply Style with Command: PAINT__ROAD__LINES" 
+               HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="240" 
+               BorderBrush="Red" VerticalContentAlignment="Center" BorderThickness="1" Background="#00000000" Height="65" 
+               ToolTip="Current Style: None selected" FontSize="10" Margin="4,0,6,0"/>
+        <TextBlock x:Name="txtBlk_Left_EOP" HorizontalAlignment="Left" Margin="0,70,0,0" TextWrapping="Wrap" 
+                   Text="Left E.O.P./Shoulder Width (CEOP)" VerticalAlignment="Top" Height="51" Width="63" 
+                   FontSize="10" ToolTip="Left EOP/Shoulder Width - Change with Command: CEOP" TextAlignment="Center"/>
+        <TextBlock x:Name="txtBlk_Lane_Width" HorizontalAlignment="Left" Margin="92,70,0,0" TextWrapping="Wrap" 
+                   Text="Vehicle Travel Lane Width (CLW)" VerticalAlignment="Top" Width="64" Height="39" 
+                   ToolTip="Lane Width - Change with Command: CLW" FontSize="10" TextAlignment="Center"/>
+        <TextBlock x:Name="txtBlk_Right_EOP" HorizontalAlignment="Left" Margin="187,70,0,0" TextWrapping="Wrap" 
+                   Text="Right E.O.P./Shoulder Width (CEOP)" VerticalAlignment="Top" Width="62" TextAlignment="Center" FontSize="10" 
+                   ToolTip="Right EOP/Shoulder Width - Change with Command: CEOP"/>
+
+        <!--Lane Width Variable-->
+        <Label x:Name="var_LaneWidth_1LN" Content="11.0" HorizontalAlignment="Left" Margin="69,103,0,0" 
+               VerticalAlignment="Top" Width="113" HorizontalContentAlignment="Center" FontWeight="Bold" 
+               FontSize="16" Height="36" ToolTip="Lane Width - Change with Command: CLW"/>
+
+        <!--Shoulder Width Variables-->
+        <Label x:Name="var_RightShoulderWidth_1LN" Content="0.0" HorizontalAlignment="Left" Margin="191,103,-1,0" 
+               VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+               Height="32" FontSize="16" FontWeight="Bold" Foreground="Black" ToolTip="Right EOP/Shoulder Width - Change with Command: CEOP"/>
+        <Label x:Name="var_LeftShoulderWidth_1LN" Content="0.0" HorizontalAlignment="Left" Margin="4,103,0,0" 
+               VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+               Height="32" FontSize="16" FontWeight="Bold" Foreground="Black" ToolTip="Left EOP/Shoulder Width - Change with Command: CEOP"/>
+
+        <!--Images inside Buttons-->
+        <Button x:Name="OneL_No_Markings" Margin="0,139,0,0" Click="OneL_No_Markings_Click" Background="#00000000"  
+                Foreground="#00000000" VerticalAlignment="Top" MinHeight="50" Height="50" Width="250" MinWidth="250" 
+                BorderBrush="Transparent"
+                BorderThickness="3">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Image x:Name="OneLane_NM" Source="Images/One-Lane/1l-nm.bmp" Width="250" Stretch="UniformToFill" 
+                           ToolTip="One Lane - No Markings. Change Lane Width to adjust width (Shoulders are always 0.0)." 
+                           Height="50" OpacityMask="Black" MinWidth="250" MinHeight="50"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+
+        <Button x:Name="OneL_W_W" Margin="0,208,0,0" Background="#00000000" Foreground="#00000000" 
+                VerticalAlignment="Top" MinWidth="130" MinHeight="50" Height="50" Click="OneL_W_W_Click" Width="250"
+                BorderBrush="Transparent"
+                BorderThickness="3">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Image x:Name="OneLane_WW" Source="Images/One-Lane/1l-W-W.bmp" Width="250" Stretch="UniformToFill" 
+                           ToolTip="One Lane - White-White Lane Markings" Height="50" MinWidth="250" MinHeight="50"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+
+        <Button x:Name="OneL_Y_W" Margin="0,278,0,0" Background="#00000000" Foreground="#00000000" VerticalAlignment="Top" 
+                MinWidth="250" MinHeight="50" Height="50" Width="250"
+                BorderBrush="Transparent"
+                BorderThickness="3" Click="OneL_Y_W_Click">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Image x:Name="OneLane_YW" Source="Images/One-Lane/1l-Y-W.bmp" Width="250" Stretch="UniformToFill" 
+                           ToolTip="One Lane - Yellow-White Lane Markings" Height="50" MinWidth="250" MinHeight="50"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+
+        <Button x:Name="OneL_W_Y" Margin="0,348,0,0" Background="#00000000" Foreground="#00000000" VerticalAlignment="Top" 
+                MinWidth="250" MinHeight="50" Height="50" Width="250"
+                BorderBrush="Transparent"
+                BorderThickness="3" Click="OneL_W_Y_Click">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Image x:Name="OneLane_WY" Source="images/One-Lane/1L-W-Y.bmp" Width="250" Stretch="UniformToFill" 
+                           ToolTip="One Lane - White-Yellow Lane Markings" Height="50" MinWidth="250" MinHeight="50" 
+                           RenderTransformOrigin="3.068,1.808"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+
+        <Button x:Name="OneL_Y_Y" Margin="0,418,0,0" Background="#00000000" Foreground="#00000000" VerticalAlignment="Top" 
+                MinWidth="250" MinHeight="50" Height="50"
+                BorderBrush="Transparent"
+                BorderThickness="3" Click="OneL_Y_Y_Click" Width="250">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Image x:Name="OneLane_YY" Source="Images/One-Lane/1l-Y-Y.bmp" Width="250" Stretch="UniformToFill" 
+                           ToolTip="One Lane - Yellow-Yellow Lane Markings" Height="50" MinWidth="250" MinHeight="50"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+    </Grid>
+</UserControl>

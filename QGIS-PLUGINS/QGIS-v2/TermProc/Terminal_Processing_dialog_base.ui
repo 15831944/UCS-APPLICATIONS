@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TermProcDialogBase</class>
+ <widget class="QDialog" name="TermProcDialogBase">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>521</width>
+    <height>441</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Terminal Processing</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_3">
+   <item row="0" column="0">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tabValidate">
+      <attribute name="title">
+       <string>Step 1: Validate Terminals</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="1" column="0" colspan="3">
+        <widget class="QTableWidget" name="tableWidgetValidation">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>200</height>
+          </size>
+         </property>
+         <property name="textElideMode">
+          <enum>Qt::ElideMiddle</enum>
+         </property>
+         <property name="sortingEnabled">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0" colspan="3">
+        <widget class="QLabel" name="lblValidateExistingLayer">
+         <property name="text">
+          <string>Please select your Final Join Layer from below before attempting to Validate your data:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="3">
+        <widget class="QTextEdit" name="lineEditValidationFeedback">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2">
+        <widget class="QPushButton" name="btnValidateExistingLayer">
+         <property name="text">
+          <string>Validate Existing Layer</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0" colspan="2">
+        <widget class="QComboBox" name="cBoxValidateExistingLayer"/>
+       </item>
+       <item row="0" column="2">
+        <widget class="QPushButton" name="btnSaveReport">
+         <property name="text">
+          <string>View Report in Excel</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0" colspan="2">
+        <widget class="QLabel" name="lblValidationReport">
+         <property name="text">
+          <string>Summary Report of Data by Terminal Number:</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabCSV">
+      <attribute name="title">
+       <string>Step 2: Create Terminal Sheet CSV File</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0" colspan="2">
+        <widget class="QLabel" name="lblCSVFileName">
+         <property name="text">
+          <string>Choose a name and location to save the CSV:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QPushButton" name="btnCSVFile">
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLineEdit" name="lineEditFileName"/>
+       </item>
+       <item row="2" column="0" colspan="2">
+        <widget class="QTextEdit" name="textEditFeedback">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0" colspan="2">
+        <widget class="QPushButton" name="btnWriteOutCSV">
+         <property name="text">
+          <string>Create a Terminal Processing CSV File</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>tableWidgetValidation</tabstop>
+  <tabstop>cBoxValidateExistingLayer</tabstop>
+  <tabstop>lineEditFileName</tabstop>
+  <tabstop>btnCSVFile</tabstop>
+  <tabstop>textEditFeedback</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
